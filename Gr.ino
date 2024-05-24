@@ -1,38 +1,20 @@
-/* Sweep
-  by BARRAGAN <http://barraganstudio.com>
-  This example code is in the public domain.
-
-  modified 8 Nov 2013
-  by Scott Fitzgerald
-  https://www.arduino.cc/en/Tutorial/LibraryExamples/Sweep
-*/
-
 #include <Servo.h>
 #include <FastLED.h>
 
-// How many leds in your strip?
 #define NUM_LEDS 1
-
-// For led chips like WS2812, which have a data line, ground, and power, you just
-// need to define DATA_PIN.  For led chipsets that are SPI based (four wires - data, clock,
-// ground, and power), like the LPD8806 define both DATA_PIN and CLOCK_PIN
-// Clock pin only needed for SPI based chipsets when not using hardware SPI
 #define DATA_PIN 3
-
-// Define the array of leds
 CRGB leds[NUM_LEDS];
 
-Servo myservo;  // create servo object to control a servo
-Servo myservo2;  // create servo object to control a servo
-// twelve servo objects can be created on most boards
+Servo myservo; 
+Servo myservo2;
 
-int pos = 90;    // variable to store the servo position
+int pos = 90;    
 int i = 0;
 
 void setup() {
-  myservo.attach(11);  // attaches the servo on pin 9 to the servo object
-  myservo2.attach(12);  // attaches the servo on pin 9 to the servo object
-  FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);  // GRB ordering is assumed
+  myservo.attach(11);  
+  myservo2.attach(12);  
+  FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS); 
 }
 
 void loop() {
@@ -56,6 +38,8 @@ void loop() {
     myservo2.write(90);
     delay(200);
   }
+  
+  //testing swction
   /* for (pos = 90; pos <= 120; pos += 1) { // goes from 0 degrees to 180 degrees
      // in steps of 1 degree
      myservo.write(pos);
